@@ -1,25 +1,20 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { ApolloProvider } from "@apollo/react-hooks";
+
+import Routes from "./src/routes";
+import { getApolloClient } from "./src/services";
 
 if (__DEV__) {
-  import("./ReactotronConfig").then(() =>
-    console.log("Reactotron Configured")
-  );
+  //@ts-ignore
+  import("./ReactotronConfig").then(() => console.log("Reactotron Configured"));
 }
 
 export default function App() {
+  const { client } = getApolloClient();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <ApolloProvider client={client as any}>
+      <Routes />
+    </ApolloProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
