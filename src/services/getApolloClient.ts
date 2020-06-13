@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
@@ -9,7 +9,7 @@ export const getApolloClient = () => {
   const [client, setClient] = useState(null);
 
   const cache = new InMemoryCache();
-
+  
   useEffect(() => {
     persistCache({
       cache,
