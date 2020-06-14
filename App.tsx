@@ -1,6 +1,7 @@
 import React from "react";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { Provider as ReduxProvider } from "react-redux";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import Routes from "./src/routes";
 import { getApolloClient } from "./src/services";
@@ -21,10 +22,12 @@ export default function App() {
   }
 
   return (
-    <ApolloProvider client={client as any}>
-      <ReduxProvider store={store}>
-        <Routes />
-      </ReduxProvider>
-    </ApolloProvider>
+    <SafeAreaProvider>
+      <ApolloProvider client={client as any}>
+        <ReduxProvider store={store}>
+          <Routes />
+        </ReduxProvider>
+      </ApolloProvider>
+    </SafeAreaProvider>
   );
 }
