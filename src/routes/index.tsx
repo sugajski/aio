@@ -1,5 +1,6 @@
 import React from 'react';
 import { NativeRouter, Switch, Route } from 'react-router-native';
+
 import Dashboard from './Dashboard';
 import PostDetails from './PostDetails';
 
