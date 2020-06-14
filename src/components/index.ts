@@ -1,3 +1,4 @@
+import DescriptionSection from './DescriptionSection';
 import ListImage from './ListImage';
 
-export { ListImage };
+export { DescriptionSection, ListImage };
