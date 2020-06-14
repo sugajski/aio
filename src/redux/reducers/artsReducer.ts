@@ -9,6 +9,7 @@ type ArtsActionTypes = IAddArtsActionType;
 
 const initialState = {
   arts: [],
+  likes: [],
 };
 
 const artsReducer = (state = initialState, action: ArtsActionTypes) => {

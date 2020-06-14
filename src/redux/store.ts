@@ -1,8 +1,9 @@
 import { createStore, combineReducers } from "redux";
-import { artsReducer } from './reducers';
+import { artsReducer, likesReducer } from './reducers';
 
 const rootReducer = combineReducers({
   arts: artsReducer,
+  likes: likesReducer,
 });
 
 const configureStore = () => createStore(rootReducer);
